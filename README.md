@@ -23,7 +23,9 @@ data/chapters.js      the list shown on the home page
 data/<page>.js        one practice page's content: PAGE, TOPICS, CONCEPT, Q, CHAPTER ...
 chapters/<page>.html  thin shell that loads lib/ + its data file
 data/hcl-guide.js     7A reading guide (standalone page, no questions, no progress)
-prompts/              reusable writing prompts (clear-writing.md)
+prompts/              reusable prompts: clear-writing.md (style), new-chapter.md (session starters)
+docs/                 new-chapter-playbook.md: full workflow, decisions, lessons learned
+CLAUDE.md             rules Claude Code loads automatically in every session
 lib/                  shared engine (common.js, engine.js, style.css)
 lab/                  interactive tools: lab.js, chem.js, lab.css, one w-<tool>.js per tool
 tools/                tests (Node) + book.py (renders textbook pages)
