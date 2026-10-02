@@ -5,6 +5,11 @@
    {f, t, d, lab:1}            → a Lab / tools page (no progress bar)
    To add a chapter: add data/<name>.js, chapters/<name>.html, and one line here. */
 const CHAPTERS=[
+ {grp:'CHAPTER 1: PERIODIC TABLE'},
+ {f:'periodic-guide.html',t:'📖 1 Reading guide (read this first)',d:'Periods, groups, configurations and the reasons behind periodic trends (p.1–15)',lab:1},
+ {f:'periodic-papers.html',t:'1.1 Past ICSE questions & MCQs',d:'Every printed ICSE question from 2017–2025 and MCQ 1–8 (p.16–17)',key:'periodic-papers-v1',n:79},
+ {f:'periodic-hots.html',t:'1.2 Additional questions, HOTS & unit test',d:'Corrections, definitions, identification, complete statements, give reasons and Unit Test Paper 1 (p.18–20)',key:'periodic-hots-v1',n:108},
+
  {grp:'CHAPTER 2: CHEMICAL BONDING'},
  {f:'bonding.html',t:'Chemical Bonding',d:'Electrovalent, covalent & coordinate bonds, electron-dot structures, properties (p.21–38)',key:'chem-bonding-v1',n:70},
 
