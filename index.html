@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICSE Class X Chemistry · Practice</title><link rel="stylesheet" href="lib/style.css">
+<style>
+.hub{max-width:820px;margin:0 auto;padding:20px}
+.ch{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:12px 0;text-decoration:none;color:inherit}
+.ch:hover{border-color:var(--pri)}.ch h3{margin:0 0 4px}.ch .bar{margin-top:8px}
+.ch.lab{border-color:#a5b4fc;background:#eef2ff}
+.grp{margin-top:26px;color:var(--mut);font-size:13px;letter-spacing:.05em}
+.backup{margin-top:34px;padding-top:12px;border-top:1px dashed var(--line);font-size:14px;color:var(--mut)}
+.backup button{border:1px solid var(--line);background:#fff;padding:5px 12px;border-radius:999px;cursor:pointer;font:inherit;font-size:13.5px;margin-right:6px}
+</style></head>
+<body><div class="hub"><h1>⚗️ ICSE Class X Chemistry · Practice</h1>
+<div class="howto">Pick a page. Each one works the same way: answer first → 💡 Hint → 📘 Concept → solution step by step. Progress is saved in this browser.</div>
+<div id="list"></div>
+<div class="backup">💾 Progress lives in this browser only. To move it to another computer or browser:
+ <div style="margin-top:6px"><button id="exp">⬇️ Export progress</button><button id="imp">⬆️ Import progress</button><input type="file" id="file" accept=".json" hidden></div></div>
+</div>
+<script src="data/chapters.js"></script>
+<script>
+const read=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}};
+document.getElementById('list').innerHTML=CHAPTERS.map(c=>{
+ if(c.grp)return `<div class="grp">${c.grp}</div>`;
+ const href='chapters/'+c.f;
+ if(c.lab)return `<a class="ch lab" href="${href}"><h3>${c.t}</h3><div class="key">${c.d}</div></a>`;
+ const s=(read(c.key)||{}).s||{},done=Object.values(s).filter(v=>v==='ok').length,total=(read(c.key+'-sum')||{}).total||c.n||0;
+ return `<a class="ch" href="${href}"><h3>${c.t}</h3><div class="key">${c.d}</div><div class="prog"><span>${done?`${done} / ${total} done`:`${total} questions · not started`}</span><div class="bar"><i style="width:${total?100*done/total:0}%"></i></div></div></a>`}).join('');
+
+/* Backup: every key that belongs to a practice page (and its -sum) */
+const keys=()=>CHAPTERS.filter(c=>c.key).flatMap(c=>[c.key,c.key+'-sum']);
+document.getElementById('exp').onclick=()=>{
+ const data={};keys().forEach(k=>{const v=localStorage.getItem(k);if(v!==null)data[k]=v});
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(data,null,1)],{type:'application/json'}));
+ a.download='chemistry-progress-'+new Date().toISOString().slice(0,10)+'.json';a.click();
+};
+document.getElementById('imp').onclick=()=>document.getElementById('file').click();
+document.getElementById('file').onchange=e=>{
+ const f=e.target.files[0];if(!f)return;
+ f.text().then(t=>{let d;try{d=JSON.parse(t)}catch(_){alert('That file is not a progress backup.');return}
+  const ok=Object.keys(d).filter(k=>keys().includes(k));
+  if(!ok.length){alert('No chapter progress found in that file.');return}
+  if(!confirm(`Replace progress for ${ok.filter(k=>!k.endsWith('-sum')).length} page(s) with the backup?`))return;
+  ok.forEach(k=>localStorage.setItem(k,d[k]));location.reload()});
+};
+</script></body></html>

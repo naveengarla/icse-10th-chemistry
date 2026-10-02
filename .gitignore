@@ -1,0 +1,7 @@
+# Textbook scans and old drafts stay on this laptop only
+sources/
+*.pdf
+# Test tooling
+tools/node_modules/
+# Rendered textbook pages for the 📖 links (tools/book.py), local only
+book/

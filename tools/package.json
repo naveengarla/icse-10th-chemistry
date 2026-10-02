@@ -1,0 +1,7 @@
+{
+  "name": "chemistry-practice-tools",
+  "private": true,
+  "description": "Checks for the practice pages. Run from this folder: npm install, then npm test",
+  "scripts": { "test": "node test.js" },
+  "devDependencies": { "jsdom": "^26.0.0" }
+}
