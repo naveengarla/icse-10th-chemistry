@@ -33,4 +33,11 @@ const CHAPTERS=[
  {f:'ammonia.html',t:'7B Ammonia',d:'Lab preparation from NH₄Cl &amp; nitrides, Haber’s process, fountain experiment, burning &amp; catalytic oxidation, basic nature &amp; precipitates, reducing action (CuO, PbO, Cl₂), tests &amp; uses (p.163–182)',key:'ammonia-v1',n:102},
  {grp:'CHAPTER 7C: NITRIC ACID'},
  {f:'nitric.html',t:'7C Nitric acid',d:'Lab preparation in an all-glass retort, Ostwald’s process, colour &amp; stability, acidic properties, oxidising action on C, S, P &amp; metals, passivity, aqua regia, brown ring test, nitrates &amp; uses (p.183–202)',key:'nitric-v1',n:146},
+ {grp:'CHAPTER 8: ORGANIC CHEMISTRY'},
+ {f:'organic-guide.html',t:'📖 8 Reading guide (read this first)',d:'Read bonds, recognise families, name structures and understand reaction choices (p.219–258)',lab:1},
+ {f:'organic-1-foundations.html',t:"8.1 Carbon, families & functional groups",d:'Textbook examples, past ICSE questions, MCQs, additional questions and unit-test parts, grouped by skill',key:'organic-1-v1',n:57},
+ {f:'organic-2-naming.html',t:"8.2 Naming & isomerism",d:'Textbook examples, past ICSE questions, MCQs, additional questions and unit-test parts, grouped by skill',key:'organic-2-v1',n:77},
+ {f:'organic-3-drawing.html',t:"8.3 Draw structures",d:'Textbook examples, past ICSE questions, MCQs, additional questions and unit-test parts, grouped by skill',key:'organic-drawing-v1',n:52},
+ {f:'organic-3-hydrocarbons.html',t:"8.4 Hydrocarbon preparation & reactions",d:'Textbook examples, past ICSE questions, MCQs, additional questions and unit-test parts, grouped by skill',key:'organic-3-v1',n:87},
+ {f:'organic-4-alcohol-acid-tests.html',t:"8.5 Ethanol, ethanoic acid & chemical tests",d:'Textbook examples, past ICSE questions, MCQs, additional questions and unit-test parts, grouped by skill',key:'organic-4-v1',n:55},
 ];
